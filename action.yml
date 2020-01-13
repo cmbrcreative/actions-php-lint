@@ -1,0 +1,16 @@
+name: PHP Lint
+description: A GitHub Action to analyze your php code.
+author: Camber Creative
+
+inputs:
+  config:
+    description: Configuration file location
+    required: false
+    default: .phplint.yml
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - -c
+    - ${{ inputs.config }}
